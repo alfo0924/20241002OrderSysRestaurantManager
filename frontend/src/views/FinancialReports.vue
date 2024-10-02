@@ -16,24 +16,24 @@
         <h3>財務摘要</h3>
         <table class="table table-dark table-striped">
           <thead>
-          <tr>
-            <th>項目</th>
-            <th>金額</th>
-          </tr>
+            <tr>
+              <th>項目</th>
+              <th>金額</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>總收入</td>
-            <td>{{ financialSummary.totalIncome }}</td>
-          </tr>
-          <tr>
-            <td>總支出</td>
-            <td>{{ financialSummary.totalExpense }}</td>
-          </tr>
-          <tr>
-            <td>淨利潤</td>
-            <td>{{ financialSummary.netProfit }}</td>
-          </tr>
+            <tr>
+              <td>總收入</td>
+              <td>{{ financialSummary.totalIncome }}</td>
+            </tr>
+            <tr>
+              <td>總支出</td>
+              <td>{{ financialSummary.totalExpense }}</td>
+            </tr>
+            <tr>
+              <td>淨利潤</td>
+              <td>{{ financialSummary.netProfit }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -44,21 +44,39 @@
         <form @submit.prevent="generateReport">
           <div class="mb-3">
             <label for="reportType" class="form-label">報表類型</label>
-            <select class="form-select" id="reportType" v-model="reportType">
-              <option value="daily">日報</option>
-              <option value="weekly">週報</option>
-              <option value="monthly">月報</option>
+            <select id="reportType" v-model="reportType" class="form-select">
+              <option value="daily">
+                日報
+              </option>
+              <option value="weekly">
+                週報
+              </option>
+              <option value="monthly">
+                月報
+              </option>
             </select>
           </div>
           <div class="mb-3">
             <label for="startDate" class="form-label">開始日期</label>
-            <input type="date" class="form-control" id="startDate" v-model="startDate">
+            <input
+              id="startDate"
+              v-model="startDate"
+              type="date"
+              class="form-control"
+            />
           </div>
           <div class="mb-3">
             <label for="endDate" class="form-label">結束日期</label>
-            <input type="date" class="form-control" id="endDate" v-model="endDate">
+            <input
+              id="endDate"
+              v-model="endDate"
+              type="date"
+              class="form-control"
+            />
           </div>
-          <button type="submit" class="btn btn-primary">生成報表</button>
+          <button type="submit" class="btn btn-primary">
+            生成報表
+          </button>
         </form>
       </div>
     </div>

@@ -3,24 +3,26 @@
     <h2>訂單管理</h2>
     <table class="table table-dark table-striped">
       <thead>
-      <tr>
-        <th>訂單ID</th>
-        <th>客戶名稱</th>
-        <th>訂單金額</th>
-        <th>狀態</th>
-        <th>操作</th>
-      </tr>
+        <tr>
+          <th>訂單ID</th>
+          <th>客戶名稱</th>
+          <th>訂單金額</th>
+          <th>狀態</th>
+          <th>操作</th>
+        </tr>
       </thead>
       <tbody>
-      <tr v-for="order in orders" :key="order.id">
-        <td>{{ order.id }}</td>
-        <td>{{ order.customerName }}</td>
-        <td>{{ order.total }}</td>
-        <td>{{ order.status }}</td>
-        <td>
-          <button class="btn btn-primary btn-sm" @click="updateStatus(order.id)">更新狀態</button>
-        </td>
-      </tr>
+        <tr v-for="order in orders" :key="order.id">
+          <td>{{ order.id }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.total }}</td>
+          <td>{{ order.status }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" @click="updateStatus(order.id)">
+              更新狀態
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

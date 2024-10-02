@@ -16,13 +16,27 @@
         <form @submit.prevent="addMenuItem">
           <div class="mb-3">
             <label for="itemName" class="form-label">菜品名稱</label>
-            <input type="text" class="form-control" id="itemName" v-model="newItem.name" required>
+            <input
+              id="itemName"
+              v-model="newItem.name"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="itemPrice" class="form-label">價格</label>
-            <input type="number" class="form-control" id="itemPrice" v-model="newItem.price" required>
+            <input
+              id="itemPrice"
+              v-model="newItem.price"
+              type="number"
+              class="form-control"
+              required
+            />
           </div>
-          <button type="submit" class="btn btn-primary">新增</button>
+          <button type="submit" class="btn btn-primary">
+            新增
+          </button>
         </form>
       </div>
     </div>
@@ -60,7 +74,7 @@ export default {
 <style scoped>
 .list-group-item {
   background-color: rgba(204, 204, 204, 0.23);
-  color: #fff;
+  color: #000000;
 }
 .form-control {
   background-color: #333;

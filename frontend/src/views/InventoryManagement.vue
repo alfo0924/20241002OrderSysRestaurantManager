@@ -6,22 +6,22 @@
         <h3>庫存列表</h3>
         <table class="table table-dark table-striped">
           <thead>
-          <tr>
-            <th>物品名稱</th>
-            <th>當前數量</th>
-            <th>最低庫存量</th>
-            <th>狀態</th>
-          </tr>
+            <tr>
+              <th>物品名稱</th>
+              <th>當前數量</th>
+              <th>最低庫存量</th>
+              <th>狀態</th>
+            </tr>
           </thead>
           <tbody>
-          <tr v-for="item in inventoryItems" :key="item.id">
-            <td>{{ item.name }}</td>
-            <td>{{ item.currentQuantity }}</td>
-            <td>{{ item.minimumQuantity }}</td>
-            <td :class="{ 'text-danger': item.currentQuantity < item.minimumQuantity }">
-              {{ item.currentQuantity < item.minimumQuantity ? '庫存不足' : '正常' }}
-            </td>
-          </tr>
+            <tr v-for="item in inventoryItems" :key="item.id">
+              <td>{{ item.name }}</td>
+              <td>{{ item.currentQuantity }}</td>
+              <td>{{ item.minimumQuantity }}</td>
+              <td :class="{ 'text-danger': item.currentQuantity < item.minimumQuantity }">
+                {{ item.currentQuantity < item.minimumQuantity ? '庫存不足' : '正常' }}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -30,17 +30,37 @@
         <form @submit.prevent="addInventoryItem">
           <div class="mb-3">
             <label for="itemName" class="form-label">物品名稱</label>
-            <input type="text" class="form-control" id="itemName" v-model="newItem.name" required>
+            <input
+              id="itemName"
+              v-model="newItem.name"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="itemQuantity" class="form-label">數量</label>
-            <input type="number" class="form-control" id="itemQuantity" v-model="newItem.currentQuantity" required>
+            <input
+              id="itemQuantity"
+              v-model="newItem.currentQuantity"
+              type="number"
+              class="form-control"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="itemMinimum" class="form-label">最低庫存量</label>
-            <input type="number" class="form-control" id="itemMinimum" v-model="newItem.minimumQuantity" required>
+            <input
+              id="itemMinimum"
+              v-model="newItem.minimumQuantity"
+              type="number"
+              class="form-control"
+              required
+            />
           </div>
-          <button type="submit" class="btn btn-primary">新增</button>
+          <button type="submit" class="btn btn-primary">
+            新增
+          </button>
         </form>
       </div>
     </div>

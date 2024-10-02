@@ -6,25 +6,29 @@
         <h3>員工列表</h3>
         <table class="table table-dark table-striped">
           <thead>
-          <tr>
-            <th>員工ID</th>
-            <th>姓名</th>
-            <th>職位</th>
-            <th>聯繫方式</th>
-            <th>操作</th>
-          </tr>
+            <tr>
+              <th>員工ID</th>
+              <th>姓名</th>
+              <th>職位</th>
+              <th>聯繫方式</th>
+              <th>操作</th>
+            </tr>
           </thead>
           <tbody>
-          <tr v-for="employee in employees" :key="employee.id">
-            <td>{{ employee.id }}</td>
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.position }}</td>
-            <td>{{ employee.contact }}</td>
-            <td>
-              <button class="btn btn-primary btn-sm me-2" @click="editEmployee(employee.id)">編輯</button>
-              <button class="btn btn-danger btn-sm" @click="deleteEmployee(employee.id)">刪除</button>
-            </td>
-          </tr>
+            <tr v-for="employee in employees" :key="employee.id">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.contact }}</td>
+              <td>
+                <button class="btn btn-primary btn-sm me-2" @click="editEmployee(employee.id)">
+                  編輯
+                </button>
+                <button class="btn btn-danger btn-sm" @click="deleteEmployee(employee.id)">
+                  刪除
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -33,17 +37,37 @@
         <form @submit.prevent="addEmployee">
           <div class="mb-3">
             <label for="employeeName" class="form-label">姓名</label>
-            <input type="text" class="form-control" id="employeeName" v-model="newEmployee.name" required>
+            <input
+              id="employeeName"
+              v-model="newEmployee.name"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="employeePosition" class="form-label">職位</label>
-            <input type="text" class="form-control" id="employeePosition" v-model="newEmployee.position" required>
+            <input
+              id="employeePosition"
+              v-model="newEmployee.position"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="employeeContact" class="form-label">聯繫方式</label>
-            <input type="text" class="form-control" id="employeeContact" v-model="newEmployee.contact" required>
+            <input
+              id="employeeContact"
+              v-model="newEmployee.contact"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
-          <button type="submit" class="btn btn-primary">新增員工</button>
+          <button type="submit" class="btn btn-primary">
+            新增員工
+          </button>
         </form>
       </div>
     </div>
